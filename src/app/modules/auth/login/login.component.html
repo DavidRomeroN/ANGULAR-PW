@@ -1,0 +1,17 @@
+<div style="max-width: 400px; margin: 100px auto; padding: 2rem; border: 1px solid #ccc; border-radius: 8px;">
+  <h2>Login</h2>
+
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <div style="margin-bottom: 1rem;">
+      <label>Usuario:</label>
+      <input type="text" formControlName="user" class="input" />
+    </div>
+
+    <div style="margin-bottom: 1rem;">
+      <label>Contraseña:</label>
+      <input type="password" formControlName="clave" class="input" />
+    </div>
+
+    <button type="submit" [disabled]="loginForm.invalid">Ingresar</button>
+  </form>
+</div>
