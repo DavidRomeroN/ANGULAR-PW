@@ -1,7 +1,9 @@
 import { Routes } from '@angular/router';
 import { DefaultLayoutComponent, EmailLayoutComponent } from './layout';
+import {ServicioComponent} from "./views/servicios/servicio/servicio.component";
 
 export const routes: Routes = [
+
   {
     path: '',
     redirectTo: 'login',
@@ -10,11 +12,10 @@ export const routes: Routes = [
   {
     path: 'apps/email',
     component: EmailLayoutComponent,
-
     children: [
       {
         path: '',
-        loadChildren: () => import('./views/apps/email/routes').then((m) => m.routes)
+        loadChildren: () => import('./views/apps/email/routes').then(m => m.routes)
       }
     ]
   },
@@ -25,6 +26,18 @@ export const routes: Routes = [
       title: 'Home'
     },
     children: [
+      {
+        path: 'servicios',
+        loadChildren: () => import('./views/servicios/routes').then(m => m.routes)
+      },
+      {
+        path: 'servicios/servicio',
+        loadComponent: () => import('./views/servicios/servicio/servicio.component').then(m => m.ServicioComponent),
+        data: {
+          title: 'Servicios'
+        }
+      },
+
       {
         path: 'crud',
         loadChildren: () => import('./views/crud/routes').then((m) => m.routes)

@@ -7,7 +7,11 @@ export const routes: Routes = [
       title: 'Crud'
     },
     children: [
-
+      {
+        path: '',
+        redirectTo: 'form-control',
+        pathMatch: 'full'
+      }
     ]
   }
 ];

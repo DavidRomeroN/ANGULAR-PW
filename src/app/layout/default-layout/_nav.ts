@@ -12,6 +12,31 @@ export const navItems: INavData[] = [
   },
   {
     title: true,
+    name: 'Servicios'
+  },
+  {
+    name: 'Servicios',
+    url: '/servicios',
+    iconComponent: { name: 'cil-layers' },
+    children: [
+      {
+        name: 'Servicio',
+        url: '/servicios/servicio',  // Ruta de servicio
+        icon: 'nav-icon-bullet'
+      },
+    ]
+  },
+  {
+    title: true,
+    name: 'Theme'
+  },
+  {
+    name: 'Colors',
+    url: '/theme/colors',
+    iconComponent: { name: 'cil-drop' }
+  },
+  {
+    title: true,
     name: 'Theme'
   },
   {
