@@ -404,6 +404,19 @@ export const navItems: INavData[] = [
     ]
   },
   {
+    name: 'Crud',
+    url: '/crud',
+    iconComponent: { name: 'cil-layers' },
+    children: [
+      {
+        name: 'Form Control',
+        url: '/forms/form-control',
+        icon: 'nav-icon-bullet'
+      },
+    ]
+
+  },
+  {
     title: true,
     name: 'Links',
     class: 'mt-auto'

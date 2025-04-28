@@ -4,7 +4,7 @@ import { DefaultLayoutComponent, EmailLayoutComponent } from './layout';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -25,6 +25,10 @@ export const routes: Routes = [
       title: 'Home'
     },
     children: [
+      {
+        path: 'crud',
+        loadChildren: () => import('./views/crud/routes').then((m) => m.routes)
+      },
       {
         path: 'dashboard',
         loadChildren: () => import('./views/dashboard/routes').then((m) => m.routes)
